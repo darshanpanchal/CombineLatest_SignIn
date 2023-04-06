@@ -10,5 +10,5 @@ workflows:
                 recipients: 
                     - darshanpanchal619@gmail.com
         max_build_duration: 120
-        instance_type: mac_mini
+        instance_type: mac_pro
         
