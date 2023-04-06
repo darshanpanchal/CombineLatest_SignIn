@@ -7,8 +7,8 @@ workflows:
            script: echo "Welcome to CI/CD setup"
         publishing:
             email:
-            recipients:
-                - darshanpanchal619@gmail.com
+                recipients: 
+                    - darshanpanchal619@gmail.com
         max_build_duration: 120
         instance_type: mac_mini
         
