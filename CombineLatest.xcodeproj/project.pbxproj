@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181D6DCA29E4384600D56B8F /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D6DC929E4384600D56B8F /* TermsViewController.swift */; };
 		182D9D9329E4151800AA6827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182D9D9229E4151700AA6827 /* GoogleService-Info.plist */; };
 		182D9D9729E420FE00AA6827 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D9D9629E420FE00AA6827 /* HomeViewController.swift */; };
 		182D9D9929E4238E00AA6827 /* Utill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D9D9829E4238E00AA6827 /* Utill.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181D6DC929E4384600D56B8F /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		182D9D9229E4151700AA6827 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		182D9D9629E420FE00AA6827 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		182D9D9829E4238E00AA6827 /* Utill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utill.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				18C4832D29DD99A1005EAE74 /* ViewController.swift */,
 				182D9D9629E420FE00AA6827 /* HomeViewController.swift */,
+				181D6DC929E4384600D56B8F /* TermsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				18C4833F29DD9E4F005EAE74 /* PasswordTextField.swift in Sources */,
 				18C4832C29DD99A1005EAE74 /* SceneDelegate.swift in Sources */,
 				182D9D9929E4238E00AA6827 /* Utill.swift in Sources */,
+				181D6DCA29E4384600D56B8F /* TermsViewController.swift in Sources */,
 				182D9D9729E420FE00AA6827 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

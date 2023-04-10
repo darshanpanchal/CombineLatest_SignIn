@@ -188,9 +188,9 @@ extension ViewController{
         self.presentTermsAndCondition()
     }
     @objc func buttonSwitch(_ sender:UISwitch){
+            self.isTnAccepted =  self.switchvalue.isOn
+            self.presentTermsAndCondition()
         
-        self.isTnAccepted =  self.switchvalue.isOn
-        self.presentTermsAndCondition()
     }
     @objc func emailFieldIsEditingChanged(_ emailField: UITextField) {
         self.viewModel.updateEmail(txtEmail: emailField.text)
@@ -209,9 +209,10 @@ extension ViewController{
 //Navigation
 extension ViewController{
     private func presentTermsAndCondition(){
-        if self.switchvalue.isOn{
-            
-        }
+            if self.switchvalue.isOn{
+                guard let termsViewController = Utill.shared.termsViewController else {return}
+                self.present(termsViewController, animated: true)
+            }
     }
     private func pushtoHomeViewController(user:User){
         DispatchQueue.main.async {

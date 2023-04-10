@@ -57,10 +57,6 @@
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="hideEye" value="visibility_show"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="showEye" value="visibility"/>
-                                                        </userDefinedRuntimeAttributes>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -108,6 +104,7 @@
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstItem="OqK-Af-sc8" firstAttribute="centerY" secondItem="OnD-do-8V8" secondAttribute="centerY" id="0Yh-Ma-tdh"/>
+                                                    <constraint firstItem="OqK-Af-sc8" firstAttribute="leading" secondItem="275-bV-YDp" secondAttribute="trailing" constant="62" id="DVR-ZI-Huc"/>
                                                     <constraint firstItem="275-bV-YDp" firstAttribute="centerY" secondItem="OnD-do-8V8" secondAttribute="centerY" id="aUS-KU-yGu"/>
                                                     <constraint firstItem="275-bV-YDp" firstAttribute="leading" secondItem="OnD-do-8V8" secondAttribute="leading" constant="3" id="eii-xB-giS"/>
                                                     <constraint firstAttribute="trailing" secondItem="OqK-Af-sc8" secondAttribute="trailing" constant="3" id="oKq-Dr-IDf"/>
@@ -229,6 +226,67 @@
             </objects>
             <point key="canvasLocation" x="1437" y="-27"/>
         </scene>
+        <!--Terms View Controller-->
+        <scene sceneID="dkD-2B-moQ">
+            <objects>
+                <viewController storyboardIdentifier="TermsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K2e-ff-hTL" customClass="TermsViewController" customModule="CombineLatest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eM1-Mc-S2Y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4U-hV-c0Y">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1l-nC-bQo">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="744-rl-QNR">
+                                        <rect key="frame" x="15" y="15" width="30" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="kXd-4x-XLq"/>
+                                            <constraint firstAttribute="height" constant="30" id="sTM-Gb-0h9"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="buttonCloseSelectorWithSender:" destination="K2e-ff-hTL" eventType="touchUpInside" id="Deq-UT-nVc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="N1l-nC-bQo" secondAttribute="trailing" id="J0Q-pp-HtD"/>
+                                    <constraint firstItem="N1l-nC-bQo" firstAttribute="leading" secondItem="m4U-hV-c0Y" secondAttribute="leading" id="OGa-eI-fzS"/>
+                                    <constraint firstItem="N1l-nC-bQo" firstAttribute="top" secondItem="m4U-hV-c0Y" secondAttribute="top" id="u9s-zY-ryF"/>
+                                    <constraint firstItem="744-rl-QNR" firstAttribute="leading" secondItem="m4U-hV-c0Y" secondAttribute="leading" constant="15" id="uXT-ye-CfW"/>
+                                    <constraint firstAttribute="bottom" secondItem="N1l-nC-bQo" secondAttribute="bottom" id="xdm-jC-2j8"/>
+                                    <constraint firstItem="744-rl-QNR" firstAttribute="top" secondItem="m4U-hV-c0Y" secondAttribute="top" constant="15" id="xzg-j5-33s"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KRO-N9-EoA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m4U-hV-c0Y" firstAttribute="top" secondItem="KRO-N9-EoA" secondAttribute="top" id="CJ3-b7-ysV"/>
+                            <constraint firstItem="KRO-N9-EoA" firstAttribute="trailing" secondItem="m4U-hV-c0Y" secondAttribute="trailing" id="Xbl-0k-xi8"/>
+                            <constraint firstItem="KRO-N9-EoA" firstAttribute="bottom" secondItem="m4U-hV-c0Y" secondAttribute="bottom" id="gLl-gw-wX1"/>
+                            <constraint firstItem="m4U-hV-c0Y" firstAttribute="leading" secondItem="KRO-N9-EoA" secondAttribute="leading" id="w5W-zH-U9W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="N1l-nC-bQo" id="4R1-SR-hvQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0aQ-pG-zdH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2100" y="-27"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="fbN-y9-IzI">
             <objects>
@@ -248,15 +306,8 @@
             <point key="canvasLocation" x="32.824427480916029" y="-27.464788732394368"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="7AS-GE-Hqc">
-            <size key="intrinsicContentSize" width="77.666666666666671" height="22"/>
-        </designable>
-        <designable name="lrG-cU-rK0">
-            <size key="intrinsicContentSize" width="146.33333333333334" height="22"/>
-        </designable>
-    </designables>
     <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="104"/>
         <image name="background" width="1824" height="2736"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -266,6 +317,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

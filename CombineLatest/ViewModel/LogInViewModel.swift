@@ -10,6 +10,7 @@ import UIKit
 import Combine
 import Firebase
 import FirebaseAuth
+import ProgressHUD
 
 
 final class LogInViewModel{
@@ -58,9 +59,11 @@ final class LogInViewModel{
 //API
 extension LogInViewModel{
     func userLoginRequest(_ completion:@escaping FirebaseLogIn){
+        ProgressHUD.show()
         //Sign In User
          FirebaseAuth.Auth.auth().signIn(withEmail: self.getEmailPassword().0, password: self.getEmailPassword().1,completion:
             {result, error in
+             ProgressHUD.dismiss()
                 guard error == nil else {
                     completion(.failure(error!))
                     return
@@ -71,9 +74,11 @@ extension LogInViewModel{
     }
     
     func userRegisterRequest(_ completion:@escaping FirebaseLogIn){
+        ProgressHUD.show()
         //Register In User
         FirebaseAuth.Auth.auth().createUser(withEmail: self.getEmailPassword().0, password:  self.getEmailPassword().1,completion:
            {result, error in
+            ProgressHUD.dismiss()
                guard error == nil else {
                    completion(.failure(error!))
                    return

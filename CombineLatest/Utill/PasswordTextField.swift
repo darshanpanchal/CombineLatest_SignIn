@@ -2,10 +2,10 @@
 import UIKit
 import Foundation
 
-@IBDesignable class PassWordTextField:UITextField{
+ class PassWordTextField:UITextField{
        //Update your custom Image  Names Here
-       @IBInspectable var hideEye:String = "visibility_show"
-       @IBInspectable var showEye:String = "visibility"
+        var hideEye:String = "visibility_show"
+        var showEye:String = "visibility"
            
        static let eyeContainerBounds = CGSize.init(width: 50, height: 50)
        static let eyeSelectorBounds = CGSize.init(width: 30, height: 30)

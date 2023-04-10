@@ -7,6 +7,7 @@ target 'CombineLatest' do
 pod 'IQKeyboardManager' 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'ProgressHUD'
 
   # Pods for CombineLatest
 

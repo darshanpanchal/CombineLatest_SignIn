@@ -7,16 +7,22 @@
 import  UIKit
 import Foundation
 
-enum Stroyboard{
-    static var main = UIStoryboard.init(name: "Main", bundle: nil)
+enum Constant{
+    static var mainStory = UIStoryboard.init(name: "Main", bundle: nil)
+    static var termsURL = "https://www.testing.com/terms-of-use/"
 }
 final class Utill{
+    
     static let shared = Utill()
     private init(){}
+    
     var loginViewController:ViewController? = {
-        return Stroyboard.main.instantiateViewController(withIdentifier: "ViewController") as? ViewController
+        return Constant.mainStory.instantiateViewController(withIdentifier: "ViewController") as? ViewController
     }()
     var homeViewController:HomeViewController? = {
-        return Stroyboard.main.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+        return Constant.mainStory.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+    }()
+    var termsViewController:TermsViewController? = {
+        return Constant.mainStory.instantiateViewController(withIdentifier: "TermsViewController") as? TermsViewController
     }()
 }
