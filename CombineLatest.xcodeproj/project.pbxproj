@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1848E80729DEEC3A006DF9A3 /* CombineLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848E80629DEEC3A006DF9A3 /* CombineLatestTests.swift */; };
 		18C4832A29DD99A1005EAE74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4832929DD99A1005EAE74 /* AppDelegate.swift */; };
 		18C4832C29DD99A1005EAE74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4832B29DD99A1005EAE74 /* SceneDelegate.swift */; };
 		18C4832E29DD99A1005EAE74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4832D29DD99A1005EAE74 /* ViewController.swift */; };
@@ -18,7 +19,19 @@
 		EFBCBA5B6BCFE28F447D83ED /* Pods_CombineLatest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E10D3F9B0E3C1BA887A4E99 /* Pods_CombineLatest.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1848E80829DEEC3A006DF9A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18C4831E29DD99A1005EAE74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18C4832529DD99A1005EAE74;
+			remoteInfo = CombineLatest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1848E80429DEEC3A006DF9A3 /* CombineLatestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineLatestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1848E80629DEEC3A006DF9A3 /* CombineLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestTests.swift; sourceTree = "<group>"; };
 		18C4832629DD99A1005EAE74 /* CombineLatest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineLatest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C4832929DD99A1005EAE74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18C4832B29DD99A1005EAE74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +48,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1848E80129DEEC3A006DF9A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18C4832329DD99A1005EAE74 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,10 +66,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1848E80529DEEC3A006DF9A3 /* CombineLatestTests */ = {
+			isa = PBXGroup;
+			children = (
+				1848E80629DEEC3A006DF9A3 /* CombineLatestTests.swift */,
+			);
+			path = CombineLatestTests;
+			sourceTree = "<group>";
+		};
 		18C4831D29DD99A1005EAE74 = {
 			isa = PBXGroup;
 			children = (
 				18C4832829DD99A1005EAE74 /* CombineLatest */,
+				1848E80529DEEC3A006DF9A3 /* CombineLatestTests */,
 				18C4832729DD99A1005EAE74 /* Products */,
 				927EC4A4AB72EBC3E464278B /* Pods */,
 				C0276A656EA86C8BE8C9F5AD /* Frameworks */,
@@ -60,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				18C4832629DD99A1005EAE74 /* CombineLatest.app */,
+				1848E80429DEEC3A006DF9A3 /* CombineLatestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,7 +124,6 @@
 				3C4829D6F947815730BE5145 /* Pods-CombineLatest.debug.xcconfig */,
 				961F22AEB1C0A2D004CF2BC7 /* Pods-CombineLatest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -109,6 +138,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1848E80329DEEC3A006DF9A3 /* CombineLatestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1848E80A29DEEC3A006DF9A3 /* Build configuration list for PBXNativeTarget "CombineLatestTests" */;
+			buildPhases = (
+				1848E80029DEEC3A006DF9A3 /* Sources */,
+				1848E80129DEEC3A006DF9A3 /* Frameworks */,
+				1848E80229DEEC3A006DF9A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1848E80929DEEC3A006DF9A3 /* PBXTargetDependency */,
+			);
+			name = CombineLatestTests;
+			productName = CombineLatestTests;
+			productReference = 1848E80429DEEC3A006DF9A3 /* CombineLatestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		18C4832529DD99A1005EAE74 /* CombineLatest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18C4833A29DD99A6005EAE74 /* Build configuration list for PBXNativeTarget "CombineLatest" */;
@@ -138,6 +185,10 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					1848E80329DEEC3A006DF9A3 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 18C4832529DD99A1005EAE74;
+					};
 					18C4832529DD99A1005EAE74 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -157,11 +208,19 @@
 			projectRoot = "";
 			targets = (
 				18C4832529DD99A1005EAE74 /* CombineLatest */,
+				1848E80329DEEC3A006DF9A3 /* CombineLatestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1848E80229DEEC3A006DF9A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18C4832429DD99A1005EAE74 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,6 +276,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1848E80029DEEC3A006DF9A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1848E80729DEEC3A006DF9A3 /* CombineLatestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18C4832229DD99A1005EAE74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,6 +297,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1848E80929DEEC3A006DF9A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18C4832529DD99A1005EAE74 /* CombineLatest */;
+			targetProxy = 1848E80829DEEC3A006DF9A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		18C4832F29DD99A1005EAE74 /* Main.storyboard */ = {
@@ -251,6 +326,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1848E80B29DEEC3A006DF9A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6JS47BKM6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.darshan.panchal.CombineLatestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CombineLatest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CombineLatest";
+			};
+			name = Debug;
+		};
+		1848E80C29DEEC3A006DF9A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6JS47BKM6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.darshan.panchal.CombineLatestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CombineLatest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CombineLatest";
+			};
+			name = Release;
+		};
 		18C4833829DD99A6005EAE74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -426,6 +537,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1848E80A29DEEC3A006DF9A3 /* Build configuration list for PBXNativeTarget "CombineLatestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1848E80B29DEEC3A006DF9A3 /* Debug */,
+				1848E80C29DEEC3A006DF9A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		18C4832129DD99A1005EAE74 /* Build configuration list for PBXProject "CombineLatest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
