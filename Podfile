@@ -5,6 +5,8 @@ target 'CombineLatest' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 pod 'IQKeyboardManager' 
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
 
   # Pods for CombineLatest
 

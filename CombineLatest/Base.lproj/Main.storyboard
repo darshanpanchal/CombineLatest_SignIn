@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CombineLatest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="CombineLatest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,6 +189,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="743" y="-27"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="KnN-eJ-qjQ">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GyO-4C-2Jk" customClass="HomeViewController" customModule="CombineLatest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fjg-pL-1Pr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TAJ-ml-txE">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHc-BN-S8d" customClass="SignInButton" customModule="CombineLatest" customModuleProvider="target">
+                                <rect key="frame" x="63" y="523.33333333333337" width="267" height="49.333333333333371"/>
+                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="buttonSingOutSelectorWithSender:" destination="GyO-4C-2Jk" eventType="touchUpInside" id="Fwb-dF-bmd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KN6-Wz-gXv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TAJ-ml-txE" firstAttribute="top" secondItem="fjg-pL-1Pr" secondAttribute="top" id="0M1-Sr-jWL"/>
+                            <constraint firstAttribute="bottom" secondItem="TAJ-ml-txE" secondAttribute="bottom" id="Es1-mA-n0y"/>
+                            <constraint firstItem="KN6-Wz-gXv" firstAttribute="trailing" secondItem="TAJ-ml-txE" secondAttribute="trailing" id="Ocr-h3-S3J"/>
+                            <constraint firstItem="TAJ-ml-txE" firstAttribute="leading" secondItem="KN6-Wz-gXv" secondAttribute="leading" id="PIY-rD-Tat"/>
+                            <constraint firstItem="WHc-BN-S8d" firstAttribute="height" secondItem="fjg-pL-1Pr" secondAttribute="height" multiplier="0.057903" id="dfh-iS-Hck"/>
+                            <constraint firstItem="WHc-BN-S8d" firstAttribute="centerX" secondItem="KN6-Wz-gXv" secondAttribute="centerX" id="fw5-Kc-TbX"/>
+                            <constraint firstItem="WHc-BN-S8d" firstAttribute="centerY" secondItem="KN6-Wz-gXv" secondAttribute="centerY" multiplier="1.25" id="iCG-Gt-dB1"/>
+                            <constraint firstItem="WHc-BN-S8d" firstAttribute="width" secondItem="fjg-pL-1Pr" secondAttribute="width" multiplier="0.679389" id="w7k-xA-AHM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPj-Vp-4aA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1437" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fbN-y9-IzI">

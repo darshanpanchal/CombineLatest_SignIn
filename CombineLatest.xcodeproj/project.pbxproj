@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182D9D9329E4151800AA6827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182D9D9229E4151700AA6827 /* GoogleService-Info.plist */; };
+		182D9D9729E420FE00AA6827 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D9D9629E420FE00AA6827 /* HomeViewController.swift */; };
+		182D9D9929E4238E00AA6827 /* Utill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D9D9829E4238E00AA6827 /* Utill.swift */; };
 		1848E80729DEEC3A006DF9A3 /* CombineLatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848E80629DEEC3A006DF9A3 /* CombineLatestTests.swift */; };
 		18C4832A29DD99A1005EAE74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4832929DD99A1005EAE74 /* AppDelegate.swift */; };
 		18C4832C29DD99A1005EAE74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4832B29DD99A1005EAE74 /* SceneDelegate.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182D9D9229E4151700AA6827 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		182D9D9629E420FE00AA6827 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		182D9D9829E4238E00AA6827 /* Utill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utill.swift; sourceTree = "<group>"; };
 		1848E80429DEEC3A006DF9A3 /* CombineLatestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineLatestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1848E80629DEEC3A006DF9A3 /* CombineLatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestTests.swift; sourceTree = "<group>"; };
 		18C4832629DD99A1005EAE74 /* CombineLatest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineLatest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +72,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182D9D9429E420CD00AA6827 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18C4832D29DD99A1005EAE74 /* ViewController.swift */,
+				182D9D9629E420FE00AA6827 /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		182D9D9529E420D900AA6827 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18C4834029DDAE59005EAE74 /* LogInViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		1848E80529DEEC3A006DF9A3 /* CombineLatestTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +122,14 @@
 			children = (
 				18C4832929DD99A1005EAE74 /* AppDelegate.swift */,
 				18C4832B29DD99A1005EAE74 /* SceneDelegate.swift */,
-				18C4832D29DD99A1005EAE74 /* ViewController.swift */,
-				18C4834029DDAE59005EAE74 /* LogInViewModel.swift */,
+				182D9D9429E420CD00AA6827 /* ViewController */,
+				182D9D9529E420D900AA6827 /* ViewModel */,
 				18C4833D29DD9E3B005EAE74 /* Utill */,
 				18C4832F29DD99A1005EAE74 /* Main.storyboard */,
 				18C4833229DD99A6005EAE74 /* Assets.xcassets */,
 				18C4833429DD99A6005EAE74 /* LaunchScreen.storyboard */,
 				18C4833729DD99A6005EAE74 /* Info.plist */,
+				182D9D9229E4151700AA6827 /* GoogleService-Info.plist */,
 			);
 			path = CombineLatest;
 			sourceTree = "<group>";
@@ -114,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				18C4833E29DD9E4F005EAE74 /* PasswordTextField.swift */,
+				182D9D9829E4238E00AA6827 /* Utill.swift */,
 			);
 			path = Utill;
 			sourceTree = "<group>";
@@ -226,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C4833629DD99A6005EAE74 /* LaunchScreen.storyboard in Resources */,
+				182D9D9329E4151800AA6827 /* GoogleService-Info.plist in Resources */,
 				18C4833329DD99A6005EAE74 /* Assets.xcassets in Resources */,
 				18C4833129DD99A1005EAE74 /* Main.storyboard in Resources */,
 			);
@@ -293,6 +319,8 @@
 				18C4832A29DD99A1005EAE74 /* AppDelegate.swift in Sources */,
 				18C4833F29DD9E4F005EAE74 /* PasswordTextField.swift in Sources */,
 				18C4832C29DD99A1005EAE74 /* SceneDelegate.swift in Sources */,
+				182D9D9929E4238E00AA6827 /* Utill.swift in Sources */,
+				182D9D9729E420FE00AA6827 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,8 +518,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -519,8 +546,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
