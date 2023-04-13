@@ -11,12 +11,14 @@ import Combine
 import Firebase
 import FirebaseAuth
 import ProgressHUD
+import CoreData
 
 
 final class LogInViewModel{
         
     static let shared:LogInViewModel = LogInViewModel()
     private init(){}
+    private var manager:UserManager = UserManager()
     
     var currentUser:User? = {
         FirebaseAuth.Auth.auth().currentUser
@@ -69,6 +71,8 @@ extension LogInViewModel{
                     return
                 }
                 guard let user:User = result?.user else {return}
+                //Create Core Data User
+                
                 completion(.success(user))
          })
     }
@@ -77,13 +81,15 @@ extension LogInViewModel{
         ProgressHUD.show()
         //Register In User
         FirebaseAuth.Auth.auth().createUser(withEmail: self.getEmailPassword().0, password:  self.getEmailPassword().1,completion:
-           {result, error in
+           { [weak self] result, error in
             ProgressHUD.dismiss()
                guard error == nil else {
                    completion(.failure(error!))
                    return
                }
                guard let user:User = result?.user else {return}
+               let usermodel =  UserModel.init(email: user.email ?? "",id: UUID(),password: self?.getEmailPassword().1)
+               self?.manager.createUser(user: usermodel)
                completion(.success(user))
         })
     }

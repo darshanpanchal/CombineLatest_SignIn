@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak private var buttonSignInSingUp:UIButton!
 
     @IBOutlet weak private var buttonTerms:UIButton!
-    @IBOutlet weak private var switchvalue:UISwitch!
+    @IBOutlet weak var switchvalue:UISwitch!
     
     
     var viewModel = LogInViewModel.shared
@@ -74,7 +74,17 @@ class ViewController: UIViewController {
         .assign(to: \.isEnabled, on: self.buttonSingIn)
         .store(in: &subcscriptions)
         
+        for description in CoreDataManager.shared.persistentContainer.persistentStoreDescriptions{
+            print("db location \(description.url)")
+        }
        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.switchvalue.isAccessibilityElement = true
+        self.switchvalue.accessibilityIdentifier = "myswitch"
+        self.buttonSingIn.isAccessibilityElement = true
+        self.buttonSingIn.accessibilityIdentifier = "Sign In"
     }
 }
 
@@ -82,6 +92,7 @@ class ViewController: UIViewController {
 extension ViewController {
  
     private func setup(){
+    
         self.containerView.layer.cornerRadius = 10.0
         self.containerView.clipsToBounds = true
         
