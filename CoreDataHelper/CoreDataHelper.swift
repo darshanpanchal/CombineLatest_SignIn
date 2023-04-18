@@ -45,7 +45,7 @@ final class CoreDataManager{
 
     // MARK: - Core Data Saving support
     func saveContext () {
-        let context = persistentContainer.viewContext
+        
         if context.hasChanges {
             do {
                 try context.save()
@@ -58,7 +58,7 @@ final class CoreDataManager{
         }
     }
     
-    func fetchManagedObject<T:NSManagedObject>(manageObject:T.Type)->[T]?{
+    func fetchManagedObject<T:NSManagedObject>(manageObject:T.Type) ->[T]?{
         do{
             guard let result = try context.fetch(manageObject.fetchRequest()) as? [T] else{
                 return nil

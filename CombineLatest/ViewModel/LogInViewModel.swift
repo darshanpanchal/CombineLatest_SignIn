@@ -18,11 +18,8 @@ final class LogInViewModel{
         
     static let shared:LogInViewModel = LogInViewModel()
     private init(){}
-    private var manager:UserManager = UserManager()
     
-    var currentUser:User? = {
-        FirebaseAuth.Auth.auth().currentUser
-    }()
+    var manager:UserManager = UserManager()
     
     //General Property
     var strSignIn = {
@@ -35,7 +32,7 @@ final class LogInViewModel{
     var dictionarySingIn:[String:Any] = [:]
     var currentState:State = .signIn
     
-    typealias FirebaseLogIn = (Result<User,Error>) -> Void
+    typealias FirebaseLogIn = (Result<CDUser,Error>) -> Void
     
     typealias EmailPassword = (String,String)
     
@@ -46,7 +43,16 @@ final class LogInViewModel{
             return ("","")
         }
     }
- 
+    func getCurrentUserFromDB()->CDUser?{
+        if let currentEmail = kUserDefault.value(forKey: kUserEmail){
+            return manager.fetchUser(byEmail: "\(currentEmail)")
+        }else{
+            return nil
+        }
+    }
+    func getAllUserRecord()->[UserModel]?{
+        return manager.getAllUser()
+    }
     enum State{
         case signIn
         case signUp
@@ -60,21 +66,33 @@ final class LogInViewModel{
 }
 //API
 extension LogInViewModel{
+    
     func userLoginRequest(_ completion:@escaping FirebaseLogIn){
         ProgressHUD.show()
         //Sign In User
          FirebaseAuth.Auth.auth().signIn(withEmail: self.getEmailPassword().0, password: self.getEmailPassword().1,completion:
-            {result, error in
+            {[weak self] result, error in
              ProgressHUD.dismiss()
                 guard error == nil else {
                     completion(.failure(error!))
                     return
                 }
                 guard let user:User = result?.user else {return}
+                kUserDefault.set(user.email, forKey: kUserEmail)
+                kUserDefault.synchronize()
+             
                 //Create Core Data User
+                let usermodel =  UserModel.init(email: user.email ?? "",id: UUID(),password: self?.getEmailPassword().1)
                 
-                completion(.success(user))
-         })
+             
+                guard let coreDataUser = self?.manager.fetchUser(byEmail: user.email ?? "") else {
+                    if let newUser = self?.manager.createUser(user: usermodel){
+                        completion(.success(newUser))
+                    }
+                return}
+                let _ = self?.manager.updateUser(user: usermodel)
+                completion(.success(coreDataUser))
+            })
     }
     
     func userRegisterRequest(_ completion:@escaping FirebaseLogIn){
@@ -88,9 +106,12 @@ extension LogInViewModel{
                    return
                }
                guard let user:User = result?.user else {return}
+                kUserDefault.set(user.email, forKey: kUserEmail)
+                kUserDefault.synchronize()
                let usermodel =  UserModel.init(email: user.email ?? "",id: UUID(),password: self?.getEmailPassword().1)
-               self?.manager.createUser(user: usermodel)
-               completion(.success(user))
+                if let cdUser = self?.manager.createUser(user: usermodel){
+                    completion(.success(cdUser))
+                }
         })
     }
     

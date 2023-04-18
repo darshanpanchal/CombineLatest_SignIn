@@ -7,7 +7,35 @@
 		<key>CombineLatest.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>0</integer>
+		</dict>
+		<key>ToDoExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>183D22E429E53D9E00D5AB04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1862CEA629EEB31A001A20B7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>18C1E09A29E560AC006817F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>18C4832529DD99A1005EAE74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

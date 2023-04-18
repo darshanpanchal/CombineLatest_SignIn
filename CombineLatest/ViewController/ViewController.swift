@@ -53,11 +53,6 @@ class ViewController: UIViewController {
     
     private var subcscriptions:Set<AnyCancellable> = Set<AnyCancellable>()
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-       
-    }
-    
     private var titleAttributted:NSAttributedString = {
         NSAttributedString(string:"Terms and Conditions",attributes:
         [NSAttributedString.Key.foregroundColor: UIColor.tintColor,
@@ -73,10 +68,7 @@ class ViewController: UIViewController {
         .receive(on: RunLoop.main)
         .assign(to: \.isEnabled, on: self.buttonSingIn)
         .store(in: &subcscriptions)
-        
-        for description in CoreDataManager.shared.persistentContainer.persistentStoreDescriptions{
-            print("db location \(description.url)")
-        }
+       
        
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -196,11 +188,11 @@ extension ViewController{
         }
     }
     @objc func buttonTerms(_ sender:UIButton){
-        self.presentTermsAndCondition()
+        //self.presentTermsAndCondition()
     }
     @objc func buttonSwitch(_ sender:UISwitch){
             self.isTnAccepted =  self.switchvalue.isOn
-            self.presentTermsAndCondition()
+           // self.presentTermsAndCondition()
         
     }
     @objc func emailFieldIsEditingChanged(_ emailField: UITextField) {
@@ -220,15 +212,16 @@ extension ViewController{
 //Navigation
 extension ViewController{
     private func presentTermsAndCondition(){
+        DispatchQueue.main.async{
             if self.switchvalue.isOn{
                 guard let termsViewController = Utill.shared.termsViewController else {return}
                 self.present(termsViewController, animated: true)
             }
+        }
     }
-    private func pushtoHomeViewController(user:User){
+    private func pushtoHomeViewController(user:CDUser){
         DispatchQueue.main.async {
             guard let homeviewcontroller = Utill.shared.homeViewController else {return}
-            homeviewcontroller.currentUser = user
             self.vanishData()
             self.navigationController?.pushViewController(homeviewcontroller, animated: true)
         }

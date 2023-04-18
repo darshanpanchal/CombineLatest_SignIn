@@ -2,7 +2,7 @@
 //  CDUser+CoreDataProperties.swift
 //  
 //
-//  Created by Darshan on 13/04/23.
+//  Created by Darshan on 16/04/23.
 //
 //
 
@@ -19,6 +19,24 @@ extension CDUser {
     @NSManaged public var email: String?
     @NSManaged public var id: UUID?
     @NSManaged public var password: String?
+    @NSManaged public var userToDo: NSSet?
+
+}
+
+// MARK: Generated accessors for userToDo
+extension CDUser {
+
+    @objc(addUserToDoObject:)
+    @NSManaged public func addToUserToDo(_ value: CDToDo)
+
+    @objc(removeUserToDoObject:)
+    @NSManaged public func removeFromUserToDo(_ value: CDToDo)
+
+    @objc(addUserToDo:)
+    @NSManaged public func addToUserToDo(_ values: NSSet)
+
+    @objc(removeUserToDo:)
+    @NSManaged public func removeFromUserToDo(_ values: NSSet)
 
 }
 extension CDUser : Identifiable {

@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Instabug
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //Configure Firebase
         FirebaseApp.configure()
+        Instabug.start(withToken: "c0d228cb21c1d704d99b75a839520306", invocationEvents: [.shake, .floatingButton])
         return true
     }
 

@@ -22,13 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let home = Utill.shared.homeViewController else {return}
         home.navigationItem.setHidesBackButton(true, animated: true)
         let rootNaviation = UINavigationController(rootViewController: logIn)
-        guard let currentUser = LogInViewModel.shared.currentUser else{
-            self.window?.rootViewController = rootNaviation
-            self.window?.makeKeyAndVisible()
-            return
+        if let _ = kUserDefault.value(forKey: kUserEmail){
+            rootNaviation.pushViewController(home, animated: false)
         }
-        home.currentUser = currentUser
-        rootNaviation.pushViewController(home, animated: true)
         self.window?.rootViewController = rootNaviation
         self.window?.makeKeyAndVisible()
     }
