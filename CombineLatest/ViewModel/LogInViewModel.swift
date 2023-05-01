@@ -13,60 +13,76 @@ import FirebaseAuth
 import ProgressHUD
 import CoreData
 
+enum State{
+    case signIn
+    case signUp
+}
+ enum Key {
+    static let email = "email"
+    static let password = "password"
+    static let confirmpassword = "confirmpassword"
+}
+typealias FirebaseLogIn = (Result<CDUser,Error>) -> Void
+typealias EmailPassword = (String,String)
 
-final class LogInViewModel{
-        
-    static let shared:LogInViewModel = LogInViewModel()
-    private init(){}
+
+protocol LogInViewModelDelegate:AnyObject{
+    //Property
+    var strSignIn:String { get set}
+    var strSignUp:String { get set}
+    var manager:UserManager { get set }
+    var currentState:State { get set}
+    var dictionarySignIn:[String:Any] {get set}
     
-    var manager:UserManager = UserManager()
+    //Validation
+    func validateSingIn()->Bool
+    func validateSingUp()->Bool
+    func isValidEmail(_ email: String) -> Bool
+    func getEmailPassword()->EmailPassword
+    func getCurrentUserFromDB()->CDUser?
+    func getAllUserRecord()->[UserModel]?
     
-    //General Property
-    var strSignIn = {
-        "Sign In"
+    //HTTPUtility
+    var httpUtill:HttpUtility {get set}
+    
+}
+
+final class LogInViewModel:LogInViewModelDelegate{
+    
+    var dictionarySignIn: [String : Any]
+    var manager: UserManager
+    var currentState: State
+    var strSignIn: String
+    var strSignUp: String
+    var httpUtill: HttpUtility
+    
+    static let shared:LogInViewModel = {
+       return LogInViewModel()
     }()
-    var strSignUp = {
-        "Sign Up"
-    }()
-  
-    var dictionarySingIn:[String:Any] = [:]
-    var currentState:State = .signIn
-    
-    typealias FirebaseLogIn = (Result<CDUser,Error>) -> Void
-    
-    typealias EmailPassword = (String,String)
-    
-    func getEmailPassword()->EmailPassword{
-        if let email = dictionarySingIn[Key.email],let password = dictionarySingIn[Key.password]{
-            return(("\(email)","\(password)"))
-        }else{
-            return ("","")
-        }
-    }
-    func getCurrentUserFromDB()->CDUser?{
-        if let currentEmail = kUserDefault.value(forKey: kUserEmail){
-            return manager.fetchUser(byEmail: "\(currentEmail)")
-        }else{
-            return nil
-        }
-    }
-    func getAllUserRecord()->[UserModel]?{
-        return manager.getAllUser()
-    }
-    enum State{
-        case signIn
-        case signUp
-    }
-     enum Key {
-        static let email = "email"
-        static let password = "password"
-        static let confirmpassword = "confirmpassword"
+
+    private init(){
+        self.manager = UserManager()
+        self.dictionarySignIn = [:]
+        self.currentState = .signIn
+        self.strSignIn = "Sign In"
+        self.strSignUp = "Sign Up"
+        self.httpUtill = HttpUtility.shared
     }
     
+   
+    
+    
+    
+   
 }
 //API
 extension LogInViewModel{
     
+    func userLogInRequestVanila(request:LogInRequest){
+        let logInRequest = self.httpUtill.createURLRequest(data: request, type: .LogIn)
+        
+        
+    }
     func userLoginRequest(_ completion:@escaping FirebaseLogIn){
         ProgressHUD.show()
         //Sign In User
@@ -116,6 +132,27 @@ extension LogInViewModel{
     }
     
 }
+//Fetch
+extension LogInViewModel{
+    func getEmailPassword()->EmailPassword{
+        if let email = self.dictionarySignIn[Key.email],let password = dictionarySignIn[Key.password]{
+            return(("\(email)","\(password)"))
+        }else{
+            return ("","")
+        }
+    }
+    func getCurrentUserFromDB()->CDUser?{
+        
+        if let currentEmail = kUserDefault.value(forKey: kUserEmail){
+            return manager.fetchUser(byEmail: "\(currentEmail)")
+        }else{
+            return nil
+        }
+    }
+    func getAllUserRecord()->[UserModel]?{
+        return manager.getAllUser()
+    }
+}
 //Update
 extension LogInViewModel{
     func updateCurrentState(completion:@escaping (_ isSingIn:Bool)->Void){
@@ -129,32 +166,32 @@ extension LogInViewModel{
     }
     func updateEmail(txtEmail:String?){
         if let emailText = txtEmail{
-            self.dictionarySingIn[Key.email] = emailText
+            self.dictionarySignIn[Key.email] = emailText
         } else {
-            self.dictionarySingIn[Key.email] = ""
+            self.dictionarySignIn[Key.email] = ""
         }
     }
     func updatePassword(txtPassword:String?){
         if let passwordText = txtPassword{
-            self.dictionarySingIn[Key.password] = passwordText
+            self.dictionarySignIn[Key.password] = passwordText
         } else {
-            self.dictionarySingIn[Key.password] = ""
+            self.dictionarySignIn[Key.password] = ""
         }
     }
     func updateConfirmPassword(txtConfirmPassword:String?){
         if let emailText = txtConfirmPassword{
-            self.dictionarySingIn[Key.confirmpassword] = emailText
+            self.dictionarySignIn[Key.confirmpassword] = emailText
         } else {
-            self.dictionarySingIn[Key.confirmpassword] = ""
+            self.dictionarySignIn[Key.confirmpassword] = ""
         }
     }
 }
 //validation
 extension LogInViewModel{
- 
+
     func validateSingIn()->Bool{
-        guard let email = dictionarySingIn[Key.email] else {return false }
-        guard let password = dictionarySingIn[Key.password] else {return false }
+        guard let email = dictionarySignIn[Key.email] else {return false }
+        guard let password = dictionarySignIn[Key.password] else {return false }
         guard self.isValidEmail("\(email)") else {return false}
         
         debugPrint(email)
@@ -163,9 +200,9 @@ extension LogInViewModel{
         return true
     }
     func validateSingUp()->Bool{
-        guard let email = dictionarySingIn[Key.email] else {return false }
-        guard let password = dictionarySingIn[Key.password] else {return false }
-        guard let confirmpassword = dictionarySingIn[Key.confirmpassword] else {return false }
+        guard let email = dictionarySignIn[Key.email] else {return false }
+        guard let password = dictionarySignIn[Key.password] else {return false }
+        guard let confirmpassword = dictionarySignIn[Key.confirmpassword] else {return false }
         guard self.isValidEmail("\(email)") else {return false}
         guard "\(password)" == "\(confirmpassword)" else {return false}
         

@@ -19,7 +19,10 @@ target 'CombineLatest' do
   pod 'ProgressHUD'
   pod 'Instabug'
 end
-
+target 'CombineLatestTests' do
+  use_frameworks!
+  available_pods
+end
 target 'ToDoExtension' do
     use_frameworks!
     available_pods

@@ -6,30 +6,55 @@
 //
 
 import XCTest
+@testable import CombineLatest
 
 final class CombineLatestTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var viewmodel = LogInViewModel.shared
+    
+    func updateWithSuccessData(){
+        self.reset()
+        viewmodel.updateEmail(txtEmail: "darshan@mail.com")
+        viewmodel.updatePassword(txtPassword: "panchal236")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func reset(){
+        viewmodel.updateEmail(txtEmail: "")
+        viewmodel.updatePassword(txtPassword: "")
     }
+    
+    func testUser_Success_LogIn_API() throws {
+        
+            self.updateWithSuccessData()
+        
+            let expectation = self.expectation(description: "login_success_api")
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+            viewmodel.userLoginRequest { result in
+                        switch result{
+                            case .success(let user):
+                                print(user.id)
+                                print(user.email)
+                                XCTAssertEqual(user.email ?? "", "darshan@mail.com")
+                            case .failure(let error):
+                                print(error.localizedDescription)
+                        }
+                expectation.fulfill()
+            }
+            self.wait(for: [expectation], timeout: 15)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    func testUser_Fail_LogIn_API() throws {
+            self.reset()
+            let expectation = self.expectation(description: "login_fail_api")
+            viewmodel.userLoginRequest { result in
+                    switch result{
+                        case .success(let user):
+                            print(user.id)
+                            print(user.email)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                    }
+            expectation.fulfill()
         }
+        self.wait(for: [expectation], timeout: 15)
     }
 
 }

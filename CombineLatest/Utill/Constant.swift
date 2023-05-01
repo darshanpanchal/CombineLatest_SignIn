@@ -11,6 +11,7 @@ let kUserDefault = UserDefaults.standard
 let kUserEmail = "email"
 typealias CompletionHandler = () -> Void
 
+
 enum Constant{
     static var termsURL = "https://www.testing.com/terms-of-use/"
 }
@@ -19,9 +20,17 @@ extension UIStoryboard{
             return UIStoryboard.init(name: "Main", bundle: nil)
         }
 }
-final class Utill{
+protocol BaseURLDelegate:AnyObject{
+    var kBaseURL:String {get}
+    var isProduction : Bool {get}
+    var kDebugBaseURL : String {get}
+    var kProductionBaseURL : String {get}
+}
+final class Utill:BaseURLDelegate{
+   
     
     static let shared = Utill()
+    
     private init(){}
     
     var loginViewController:ViewController? = {
@@ -33,7 +42,17 @@ final class Utill{
     var termsViewController:TermsViewController? = {
         return UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TermsViewController") as? TermsViewController
     }()
+    var kBaseURL: String = ""
+    var kDebugBaseURL: String = ""
+    var kProductionBaseURL: String = ""
+    
+    var isProduction: Bool =  false {
+        didSet{
+            kBaseURL = isProduction ? kProductionBaseURL : kDebugBaseURL
+        }
+    }
 }
+
 protocol UIViewControllerDelegate{
     func configureNavigationLargeTitle()
 }
