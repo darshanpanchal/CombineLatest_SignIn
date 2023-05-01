@@ -70,6 +70,10 @@ class ViewController: UIViewController {
         .store(in: &subcscriptions)
        
        
+        
+      
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -120,6 +124,16 @@ extension ViewController {
 //DataSource
 extension ViewController{
     private func performSingInRequest(){
+        viewModel.userLogIn(){ [weak self] result in
+            switch result{
+                case .success(let response):
+                    print(response)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+        
         LogInViewModel.shared.userLoginRequest {[weak self] result in
                 switch result{
                     case .success(let user):

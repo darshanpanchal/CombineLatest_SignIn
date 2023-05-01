@@ -20,13 +20,8 @@ extension UIStoryboard{
             return UIStoryboard.init(name: "Main", bundle: nil)
         }
 }
-protocol BaseURLDelegate:AnyObject{
-    var kBaseURL:String {get}
-    var isProduction : Bool {get}
-    var kDebugBaseURL : String {get}
-    var kProductionBaseURL : String {get}
-}
-final class Utill:BaseURLDelegate{
+
+final class Utill{
    
     
     static let shared = Utill()
@@ -42,15 +37,7 @@ final class Utill:BaseURLDelegate{
     var termsViewController:TermsViewController? = {
         return UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "TermsViewController") as? TermsViewController
     }()
-    var kBaseURL: String = ""
-    var kDebugBaseURL: String = ""
-    var kProductionBaseURL: String = ""
     
-    var isProduction: Bool =  false {
-        didSet{
-            kBaseURL = isProduction ? kProductionBaseURL : kDebugBaseURL
-        }
-    }
 }
 
 protocol UIViewControllerDelegate{

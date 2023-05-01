@@ -86,9 +86,87 @@
             filePath = "CombineLatestTests/CombineLatestTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "testUser_Fail_LogIn_API()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "44593CC3-0B5C-4AFC-AE10-50DADBA03A76 - 16099ea10a9b1859"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;CombineLatest.CDUser, Swift.Error&gt;) -&gt; () in CombineLatestTests.CombineLatestTests.testUser_Fail_LogIn_API() throws -&gt; ()"
+                  moduleName = "CombineLatestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/Development/Projects/Learning/CombineLatest/CombineLatestTests/CombineLatestTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "1067">
+               </Location>
+               <Location
+                  uuid = "44593CC3-0B5C-4AFC-AE10-50DADBA03A76 - 16099ea10a9b1878"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;CombineLatest.CDUser, Swift.Error&gt;) -&gt; () in CombineLatestTests.CombineLatestTests.testUser_Fail_LogIn_API() throws -&gt; ()"
+                  moduleName = "CombineLatestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/Development/Projects/Learning/CombineLatest/CombineLatestTests/CombineLatestTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "1067">
+               </Location>
+               <Location
+                  uuid = "44593CC3-0B5C-4AFC-AE10-50DADBA03A76 - 16099ea10a9b181f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;CombineLatest.CDUser, Swift.Error&gt;) -&gt; () in CombineLatestTests.CombineLatestTests.testUser_Fail_LogIn_API() throws -&gt; ()"
+                  moduleName = "CombineLatestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/Development/Projects/Learning/CombineLatest/CombineLatestTests/CombineLatestTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1067">
+               </Location>
+               <Location
+                  uuid = "44593CC3-0B5C-4AFC-AE10-50DADBA03A76 - 16099ea10a9b1ffc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;CombineLatest.CDUser, Swift.Error&gt;) -&gt; () in CombineLatestTests.CombineLatestTests.testUser_Fail_LogIn_API() throws -&gt; ()"
+                  moduleName = "CombineLatestTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/Development/Projects/Learning/CombineLatest/CombineLatestTests/CombineLatestTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "1067">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EBA8C34B-CFAE-4111-B05A-9A45B3A64C7B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CombineLatest/ViewController/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "performSingInRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

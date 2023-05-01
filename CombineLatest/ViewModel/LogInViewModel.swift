@@ -68,20 +68,14 @@ final class LogInViewModel:LogInViewModelDelegate{
         self.strSignUp = "Sign Up"
         self.httpUtill = HttpUtility.shared
     }
-    
-   
-    
-    
-    
-   
 }
 //API
 extension LogInViewModel{
     
-    func userLogInRequestVanila(request:LogInRequest){
-        let logInRequest = self.httpUtill.createURLRequest(data: request, type: .LogIn)
-        
-        
+    func userLogIn(comletionHandler:@escaping (Result<SignInResponse?,HTTPError>)->Void){
+        SignInDataResource().dataRequest(request: self.logInRequest()) { result in
+            comletionHandler(result)
+        }
     }
     func userLoginRequest(_ completion:@escaping FirebaseLogIn){
         ProgressHUD.show()
@@ -151,6 +145,9 @@ extension LogInViewModel{
     }
     func getAllUserRecord()->[UserModel]?{
         return manager.getAllUser()
+    }
+    func logInRequest()->SignInRequest{
+        SignInRequest.init(username:self.getEmailPassword().0, password: self.getEmailPassword().1)
     }
 }
 //Update

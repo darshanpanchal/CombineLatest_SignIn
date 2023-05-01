@@ -21,7 +21,21 @@ final class CombineLatestTests: XCTestCase {
         viewmodel.updateEmail(txtEmail: "")
         viewmodel.updatePassword(txtPassword: "")
     }
-    
+    func testUserLogInRequest() throws{
+        let request = SignInRequest.init(username: "kminchelle", password: "0lelplR")
+        let expectation = self.expectation(description: "login_success_api")
+        SignInDataResource().dataRequest(request: request) { result in
+            expectation.fulfill()
+            switch result{
+                case .success(let result):
+                print("------ \(result?.email ?? "")")
+                XCTAssertEqual(result?.email ?? "", "kminchelle@qq.com")
+                case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        self.wait(for: [expectation], timeout: 3.0)
+    }
     func testUser_Success_LogIn_API() throws {
         
             self.updateWithSuccessData()

@@ -17,8 +17,8 @@
 		1814919D29EEBAFD00467793 /* ToDo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1814919829EEBAFB00467793 /* ToDo.intentdefinition */; };
 		181491A029EEBAFD00467793 /* ToDoExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1814918E29EEBAFB00467793 /* ToDoExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		181CDA0F29FFD91300F30002 /* HttpUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CDA0E29FFD91300F30002 /* HttpUtility.swift */; };
-		181CDA1129FFF0D600F30002 /* LogInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CDA1029FFF0D600F30002 /* LogInRequest.swift */; };
-		181CDA1329FFF10400F30002 /* LogInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CDA1229FFF10400F30002 /* LogInResponse.swift */; };
+		181CDA1129FFF0D600F30002 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CDA1029FFF0D600F30002 /* AuthRequest.swift */; };
+		181CDA1329FFF10400F30002 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CDA1229FFF10400F30002 /* AuthResponse.swift */; };
 		181D6DCA29E4384600D56B8F /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D6DC929E4384600D56B8F /* TermsViewController.swift */; };
 		182D9D9329E4151800AA6827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182D9D9229E4151700AA6827 /* GoogleService-Info.plist */; };
 		182D9D9729E420FE00AA6827 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D9D9629E420FE00AA6827 /* HomeViewController.swift */; };
@@ -30,6 +30,9 @@
 		1844F5D729EBF29900F74AF0 /* CDToDo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1844F5D129EBF29900F74AF0 /* CDToDo+CoreDataClass.swift */; };
 		1844F5D829EBF29900F74AF0 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1844F5D329EBF29900F74AF0 /* CDUser+CoreDataProperties.swift */; };
 		1844F5DA29EBF2F900F74AF0 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1844F5D929EBF2F900F74AF0 /* ToDo.swift */; };
+		189236F62A003A070079030E /* AuthDataResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189236F52A003A070079030E /* AuthDataResource.swift */; };
+		189236F82A0057490079030E /* HttpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189236F72A0057490079030E /* HttpDelegate.swift */; };
+		189236FB2A0058AF0079030E /* HttpConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189236FA2A0058AF0079030E /* HttpConstant.swift */; };
 		18AE177829ED65A6005AE5E6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AE177729ED65A6005AE5E6 /* HomeViewModel.swift */; };
 		18C1E09E29E560AC006817F4 /* CombineLatestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1E09D29E560AC006817F4 /* CombineLatestUITests.swift */; };
 		18C1E0A029E560AC006817F4 /* CombineLatestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1E09F29E560AC006817F4 /* CombineLatestUITestsLaunchTests.swift */; };
@@ -96,8 +99,8 @@
 		1814919929EEBAFD00467793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1814919B29EEBAFD00467793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		181CDA0E29FFD91300F30002 /* HttpUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtility.swift; sourceTree = "<group>"; };
-		181CDA1029FFF0D600F30002 /* LogInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInRequest.swift; sourceTree = "<group>"; };
-		181CDA1229FFF10400F30002 /* LogInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponse.swift; sourceTree = "<group>"; };
+		181CDA1029FFF0D600F30002 /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		181CDA1229FFF10400F30002 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		181D6DC929E4384600D56B8F /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		182D9D9229E4151700AA6827 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		182D9D9629E420FE00AA6827 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +115,9 @@
 		1844F5D929EBF2F900F74AF0 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		1862CE8629EEAE4C001A20B7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1862CE8829EEAE4C001A20B7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		189236F52A003A070079030E /* AuthDataResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResource.swift; sourceTree = "<group>"; };
+		189236F72A0057490079030E /* HttpDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpDelegate.swift; sourceTree = "<group>"; };
+		189236FA2A0058AF0079030E /* HttpConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpConstant.swift; sourceTree = "<group>"; };
 		18AE177729ED65A6005AE5E6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		18C1E09B29E560AC006817F4 /* CombineLatestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineLatestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C1E09D29E560AC006817F4 /* CombineLatestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestUITests.swift; sourceTree = "<group>"; };
@@ -191,7 +197,7 @@
 		181CDA0A29FFD87800F30002 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				181CDA1029FFF0D600F30002 /* LogInRequest.swift */,
+				181CDA1029FFF0D600F30002 /* AuthRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -199,22 +205,24 @@
 		181CDA0B29FFD88100F30002 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				181CDA1229FFF10400F30002 /* LogInResponse.swift */,
+				181CDA1229FFF10400F30002 /* AuthResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
 		};
-		181CDA0C29FFD88A00F30002 /* Resource */ = {
+		181CDA0C29FFD88A00F30002 /* DataResource */ = {
 			isa = PBXGroup;
 			children = (
+				189236F52A003A070079030E /* AuthDataResource.swift */,
 			);
-			path = Resource;
+			path = DataResource;
 			sourceTree = "<group>";
 		};
 		181CDA0D29FFD89200F30002 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				181CDA0E29FFD91300F30002 /* HttpUtility.swift */,
+				189236F92A00589F0079030E /* Http */,
+				18C4833D29DD9E3B005EAE74 /* Common */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -241,8 +249,8 @@
 		1834F2EF29E81FB600E33059 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				181CDA0B29FFD88100F30002 /* Response */,
 				181CDA0A29FFD87800F30002 /* Request */,
+				181CDA0B29FFD88100F30002 /* Response */,
 				1834F2F029E81FC000E33059 /* User.swift */,
 				1844F5D929EBF2F900F74AF0 /* ToDo.swift */,
 			);
@@ -255,6 +263,16 @@
 				183D22E729E53D9F00D5AB04 /* CombineLatestTests.swift */,
 			);
 			path = CombineLatestTests;
+			sourceTree = "<group>";
+		};
+		189236F92A00589F0079030E /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				181CDA0E29FFD91300F30002 /* HttpUtility.swift */,
+				189236FA2A0058AF0079030E /* HttpConstant.swift */,
+				189236F72A0057490079030E /* HttpDelegate.swift */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 		18C1E09C29E560AC006817F4 /* CombineLatestUITests */ = {
@@ -297,11 +315,10 @@
 				18C4832929DD99A1005EAE74 /* AppDelegate.swift */,
 				18C4832B29DD99A1005EAE74 /* SceneDelegate.swift */,
 				181CDA0D29FFD89200F30002 /* Utility */,
-				181CDA0C29FFD88A00F30002 /* Resource */,
+				181CDA0C29FFD88A00F30002 /* DataResource */,
 				1834F2EF29E81FB600E33059 /* Model */,
 				182D9D9429E420CD00AA6827 /* ViewController */,
 				182D9D9529E420D900AA6827 /* ViewModel */,
-				18C4833D29DD9E3B005EAE74 /* Utill */,
 				18C4832F29DD99A1005EAE74 /* Main.storyboard */,
 				18C4833229DD99A6005EAE74 /* Assets.xcassets */,
 				18C4833429DD99A6005EAE74 /* LaunchScreen.storyboard */,
@@ -311,13 +328,13 @@
 			path = CombineLatest;
 			sourceTree = "<group>";
 		};
-		18C4833D29DD9E3B005EAE74 /* Utill */ = {
+		18C4833D29DD9E3B005EAE74 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				18C4833E29DD9E4F005EAE74 /* PasswordTextField.swift */,
 				182D9D9829E4238E00AA6827 /* Constant.swift */,
 			);
-			path = Utill;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		18D6845C29E8144400B459D7 /* CoreDataHelper */ = {
@@ -657,27 +674,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181CDA1329FFF10400F30002 /* LogInResponse.swift in Sources */,
+				181CDA1329FFF10400F30002 /* AuthResponse.swift in Sources */,
 				1814919D29EEBAFD00467793 /* ToDo.intentdefinition in Sources */,
 				18AE177829ED65A6005AE5E6 /* HomeViewModel.swift in Sources */,
 				1844F5D629EBF29900F74AF0 /* CDToDo+CoreDataProperties.swift in Sources */,
 				1834F2F129E81FC000E33059 /* User.swift in Sources */,
 				1844F5D729EBF29900F74AF0 /* CDToDo+CoreDataClass.swift in Sources */,
 				18C4832E29DD99A1005EAE74 /* ViewController.swift in Sources */,
+				189236F62A003A070079030E /* AuthDataResource.swift in Sources */,
 				18C4834129DDAE59005EAE74 /* LogInViewModel.swift in Sources */,
 				18C4832A29DD99A1005EAE74 /* AppDelegate.swift in Sources */,
 				1844F5D829EBF29900F74AF0 /* CDUser+CoreDataProperties.swift in Sources */,
 				18C4833F29DD9E4F005EAE74 /* PasswordTextField.swift in Sources */,
 				18D6845A29E812A000B459D7 /* CombineLatestCoreData.xcdatamodeld in Sources */,
+				189236F82A0057490079030E /* HttpDelegate.swift in Sources */,
 				18C4832C29DD99A1005EAE74 /* SceneDelegate.swift in Sources */,
 				18D6846229E8148C00B459D7 /* CoreDataHelper.swift in Sources */,
 				1844F5DA29EBF2F900F74AF0 /* ToDo.swift in Sources */,
 				181CDA0F29FFD91300F30002 /* HttpUtility.swift in Sources */,
 				182D9D9929E4238E00AA6827 /* Constant.swift in Sources */,
 				181D6DCA29E4384600D56B8F /* TermsViewController.swift in Sources */,
-				181CDA1129FFF0D600F30002 /* LogInRequest.swift in Sources */,
+				181CDA1129FFF0D600F30002 /* AuthRequest.swift in Sources */,
 				182D9D9729E420FE00AA6827 /* HomeViewController.swift in Sources */,
 				1844F5D529EBF29900F74AF0 /* CDUser+CoreDataClass.swift in Sources */,
+				189236FB2A0058AF0079030E /* HttpConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
